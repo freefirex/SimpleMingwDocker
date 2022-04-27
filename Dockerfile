@@ -1,5 +1,5 @@
 from ubuntu:impish
 
-RUN apt update && apt install -y mingw-w64 git bash
+RUN apt update && apt install -y build-essential mingw-w64 git bash && rm /bin/sh && ln -s /bin/bash /bin/sh
 
-ENTRYPOINT [ "/bin/sh", "-c" ]
+CMD ["/bin/bash", "-c"]
